@@ -193,7 +193,43 @@
   list-style: none;
 
   > li {
-    margin-bottom: $spacing-unit;
+    padding: $spacing-unit/2 0;
+    border-bottom: 1px solid $oc-gray-2;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.post-card {
+  display: block;
+  padding: $spacing-unit/2 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .meta {
+    font-size: $small-font-size;
+    line-height: 1;
+    color: $oc-gray-5;
+  }
+
+  .title {
+    margin-top: $spacing-unit/2;
+    margin-bottom: 0;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+
+  .excerpt {
+    margin-top: $spacing-unit/4;
+    color: $oc-gray-6;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -201,12 +237,6 @@
   font-size: $small-font-size;
   color: $grey-color;
 }
-
-.post-link {
-  display: block;
-  @include relative-font-size(1.5);
-}
-
 
 
 /**
