@@ -206,10 +206,6 @@
   display: block;
   padding: $spacing-unit/2 0;
 
-  &:hover {
-    text-decoration: none;
-  }
-
   .meta {
     font-size: $small-font-size;
     line-height: 1;
@@ -280,6 +276,19 @@
 
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
+    }
+  }
+
+  a {
+    transition: all 0.2s ease-in-out;
+    border-bottom: 1px solid $brand-color;
+
+    &:hover {
+      background-color: change-color($brand-color, $saturation: 100, $lightness: 90, $alpha: 0.5);
+      border-bottom-color: $brand-color;
+      &:after {
+        height: 2px;
+      }
     }
   }
 }
