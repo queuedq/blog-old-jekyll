@@ -1,0 +1,66 @@
+// Default font size
+html, body {
+  font-family: $base-font-family;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $text-color;
+}
+
+// Headings
+h1, h2, h3 {
+  margin: spacing(4) 0 spacing(1) 0;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h4, h5, h6 {
+  margin: spacing(3) 0 spacing(1) 0;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h1 { font-size: 42px; line-height: 1.2; letter-spacing: -1px; }
+h2 { font-size: 28px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+
+
+// Links
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $brand-color-dark-2;
+  }
+}
+
+@mixin style-link {
+  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid $brand-color;
+
+  &:hover {
+    background-color: $brand-color-light-5;
+    color: $brand-color-dark-1;
+    border-bottom-color: $brand-color-dark-1;
+  }
+}
+
+@mixin reset-link($ratio) {
+  color: inherit;
+}
+
+
+// Lists
+ul, ol {
+  margin-left: 1.5rem;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}

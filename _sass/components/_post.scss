@@ -1,0 +1,33 @@
+.post-header {
+  margin-bottom: spacing(4);
+}
+
+.post-content {
+  margin-bottom: spacing(4);
+
+  ul li {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -1.3rem;
+      margin: auto 0;
+      width: 6px;
+      height: 6px;
+      background-color: $brand-color;
+      border-radius: 50%;
+    }
+  }
+
+  a {
+    @include style-link
+  }
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
