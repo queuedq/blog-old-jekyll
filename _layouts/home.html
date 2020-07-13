@@ -13,13 +13,18 @@ layout: default
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list">
       {%- for post in site.posts -%}
-      <li>
-        <a class="post-card" href="{{ post.url | relative_url }}">
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <div class="post-card-meta">{{ post.date | date: date_format }}</div>
-          <h3 class="post-card-title">{{ post.title | escape }}</h3>
-          <div class="post-card-excerpt">{{ post.excerpt | strip_html | escape }}</div>
-        </a>
+      <li class="post-card">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <div class="post-card-category">{{ post.categories[0] }}</div>
+        <h3 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        <div class="post-card-date">{{ post.date | date: date_format }}</div>
+        {%- if post.summary -%}
+        <div class="post-card-summary">{{ post.summary | strip_html | escape }}</div>
+        {%- endif -%}
       </li>
       {%- endfor -%}
     </ul>
